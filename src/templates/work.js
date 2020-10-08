@@ -1,9 +1,9 @@
-import React from 'react'
-import Slider from 'react-slick'
-import { HelmetDatoCms } from 'gatsby-source-datocms'
-import Img from 'gatsby-image'
-import { graphql } from 'gatsby'
-import Layout from "../components/layout"
+import React from "react";
+import Slider from "react-slick";
+import { HelmetDatoCms } from "gatsby-source-datocms";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
 
 export default ({ data }) => (
   <Layout>
@@ -13,16 +13,22 @@ export default ({ data }) => (
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
         <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
         <div className="sheet__slider">
-          <Slider infinite={true} slidesToShow={2} arrows>
-            {data.datoCmsWork.gallery.map(({ fluid }) => (
-              <img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src} />
-            ))}
-          </Slider>
+          {data.datoCmsWork.gallery.length > 0 && (
+            <Slider infinite={true} slidesToShow={1} arrows>
+              {data.datoCmsWork.gallery.map(({ fluid }) => (
+                <img
+                  alt={data.datoCmsWork.title}
+                  key={fluid.src}
+                  src={fluid.src}
+                />
+              ))}
+            </Slider>
+          )}
         </div>
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
+            __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html
           }}
         />
         <div className="sheet__gallery">
@@ -31,7 +37,7 @@ export default ({ data }) => (
       </div>
     </article>
   </Layout>
-)
+);
 
 export const query = graphql`
   query WorkQuery($slug: String!) {
@@ -59,4 +65,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

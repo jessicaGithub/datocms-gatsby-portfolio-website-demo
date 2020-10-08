@@ -6,10 +6,12 @@
     text-transform: uppercase
     font-weight: bold
     text-decoration: none
-    color: $dark-body-color
+    color: $light-body-color
+    font-family: 'Adamina', serif
 
     &:hover
-      border-bottom: dotted 1px #9055a2
+      color: $light-body-color
+      border-bottom: dotted 1px $border-color
 
 .sidebar__intro
   color: $light-body-color
@@ -32,6 +34,7 @@
       padding-left: 20px
       color: $base-body-color
       position: relative
+      margin-bottom: 0.25rem
 
       &:before
         content: ""
@@ -48,15 +51,15 @@
         opacity: 0.6
 
       &:hover
-        color: $active-color
+        color: $border-color
 
     &.is-active a
-      font-weight: bold
-      color: $active-color
+      font-weight: 700
+      color: $base-body-color
 
 .sidebar__social
   margin-bottom: 20px
 
 .sidebar__copyright
   color: $light-body-color
-  font-size: 13px
+  font-size: 11px

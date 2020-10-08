@@ -9,6 +9,9 @@
   background-size: 40%
   background-repeat: no-repeat
   margin-bottom: 10px
+  margin-right: 0.5rem
+  &:hover
+    background-color: transparent
 
 .social--facebook
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/facebook-f.svg')
@@ -22,7 +25,12 @@
 .social--email
   background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/envelope.svg')
 
+.social--linkedin
+  background-image: url('https://cdn.rawgit.com/encharm/Font-Awesome-SVG-PNG/master/black/svg/linkedin.svg')
+
 @media screen and (min-width: 900px)
   .social
     width: 40px
     height: 40px
+    &:hover
+      background-color: $active-color
